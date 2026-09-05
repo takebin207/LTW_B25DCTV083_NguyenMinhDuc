@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Máy tính đơn giản</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ecf0f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .calculator {
+        background-color: #2c3e50;
+        padding: 20px;
+        border-radius: 8px;
+        width: 320px;
+        max-width: 100%;
+    }
+
+    .calculator h1 {
+        color: white;
+        text-align: center;
+        font-size: 22px;
+        margin: 0 0 15px;
+    }
+
+    #display {
+        background-color: #ffffff;
+        height: 50px;
+        border-radius: 4px;
+        text-align: right;
+        padding: 10px;
+        font-size: 24px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #34495e;
+        color: white;
+    }
+
+    button:hover {
+        background-color: #1a252f;
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
+    .operator {
+        background-color: #e67e22;
+    }
+
+    .operator:hover {
+        background-color: #ca6f1e;
+    }
+
+    .equal {
+        background-color: #27ae60;
+        grid-column: span 2;
+    }
+
+    .equal:hover {
+        background-color: #1e8449;
+    }
+
+    .clear {
+        background-color: #c0392b;
+        grid-column: span 2;
+    }
+
+    .clear:hover {
+        background-color: #922b21;
+    }
+</style>
+</head>
+<body>
+
+    <main class="calculator">
+        <h1>Máy tính đơn giản</h1>
+        <div id="display" aria-live="polite">0</div>
+
+        <div class="buttons">
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">/</button>
+
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">*</button>
+
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">-</button>
+
+            <button class="number">0</button>
+            <button class="operator">+</button>
+
+            <button class="clear">Clear</button>
+            <button class="equal">=</button>
+        </div>
+    </main>
+
+    <script>
+        var display = document.getElementById("display");
+        var dangNhapMoi = true;
+
+        function laToanTu(kyTu) {
+            return kyTu === "+" || kyTu === "-" || kyTu === "*" || kyTu === "/";
+        }
+
+        var soButtons = document.querySelectorAll(".number");
+        for (var i = 0; i < soButtons.length; i++) {
+            soButtons[i].addEventListener("click", function () {
+                if (display.innerText === "0" || dangNhapMoi) {
+                    display.innerText = this.innerText;
+                    dangNhapMoi = false;
+                } else {
+                    display.innerText += this.innerText;
+                }
+            });
+        }
+
+        var opButtons = document.querySelectorAll(".operator");
+        for (var i = 0; i < opButtons.length; i++) {
+            opButtons[i].addEventListener("click", function () {
+                var bieuThuc = display.innerText;
+                var kyTuCuoi = bieuThuc.slice(-1);
+
+                if (bieuThuc === "0" || bieuThuc === "Lỗi") {
+                    return;
+                }
+
+                if (laToanTu(kyTuCuoi)) {
+                    display.innerText = bieuThuc.slice(0, -1) + this.innerText;
+                } else {
+                    display.innerText += this.innerText;
+                }
+
+                dangNhapMoi = false;
+            });
+        }
+
+        document.querySelector(".clear").addEventListener("click", function () {
+            display.innerText = "0";
+            dangNhapMoi = true;
+        });
+
+        document.querySelector(".equal").addEventListener("click", function () {
+            var bieuThuc = display.innerText;
+            var kyTuDau = bieuThuc.charAt(0);
+            var kyTuCuoi = bieuThuc.slice(-1);
+
+            var hopLe = /^[0-9+\-*/]+$/.test(bieuThuc) &&
+                        !laToanTu(kyTuDau) && !laToanTu(kyTuCuoi);
+
+            if (!hopLe) {
+                display.innerText = "Lỗi";
+            } else {
+                try {
+                    var ketQua = eval(bieuThuc);
+                    if (isFinite(ketQua)) {
+                        display.innerText = ketQua;
+                    } else {
+                        display.innerText = "Không thể chia cho 0";
+                    }
+                } catch (error) {
+                    display.innerText = "Lỗi";
+                }
+            }
+
+            dangNhapMoi = true;
+        });
+    </script>
+
+</body>
+</html>

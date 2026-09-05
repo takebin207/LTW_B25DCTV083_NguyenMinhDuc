@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trang giới thiệu - Nguyễn Minh Đức</title>
+
+
+  <style>
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+      transition: background-color 0.4s;
+    }
+
+    header { background: #2c3e50; color: #fff; padding: 20px; text-align: center; }
+
+    nav { background: #34495e; padding: 10px; text-align: center; }
+
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+
+    .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
+
+    section, aside {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    aside { border-left: 4px solid #2c3e50; background: #ecf0f1; }
+
+    h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin-bottom: 15px; }
+    h3 { color: #34495e; margin: 15px 0 10px; }
+
+    img { max-width: 140px; border-radius: 50%; display: block; margin: 10px auto; }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    table, th, td { border: 1px solid #ccc; }
+    th, td { padding: 8px; text-align: left; }
+    th { background: #2c3e50; color: #fff; }
+
+    ul, ol { margin-left: 25px; margin-top: 10px; }
+
+    #welcome { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 10px; }
+
+    #btnChangeColor { display: block; margin: 20px auto 0; }
+
+    form label { display: block; margin-top: 10px; font-weight: bold; }
+    form input, form textarea, form select {
+      width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;
+    }
+    form button, #btnChangeColor {
+      margin-top: 15px; padding: 10px 20px; background: #2c3e50; color: #fff;
+      border: none; border-radius: 4px; cursor: pointer; font-size: 15px;
+    }
+    form button:hover, #btnChangeColor:hover { background: #1a252f; }
+
+    footer { text-align: center; padding: 15px; background: #2c3e50; color: #fff; margin-top: 20px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Nguyễn Minh Đức</h1>
+    <p>Sinh viên - Học viện Công nghệ Bưu chính Viễn thông (PTIT)</p>
+  </header>
+
+  <nav>
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#thong-tin">Thông tin cá nhân</a>
+    <a href="#ky-nang">Kỹ năng &amp; Học tập</a>
+    <a href="#lien-he">Liên hệ</a>
+  </nav>
+
+  <main class="container">
+    <section id="gioi-thieu">
+      <h2>Giới thiệu bản thân</h2>
+
+      <img src="avatar.jpg" alt="Ảnh đại diện của Nguyễn Minh Đức">
+      <p id="welcome">Xin chào!</p>
+      <p>
+        Mình là <strong>Nguyễn Minh Đức</strong>, hiện đang là <span style="color:#2c3e50;">sinh viên</span>
+        ngành Công nghệ thông tin tại PTIT. Mình <b>thích tìm hiểu lập trình web</b> và luôn
+        <i>cố gắng học hỏi thêm mỗi ngày</i>.
+        <u>Mục tiêu gần nhất</u> là nắm vững HTML, CSS, JavaScript để làm chủ các dự án cá nhân.
+        <small>(Trang được cập nhật năm 2026)</small>
+      </p>
+
+      <p>
+        Xem thêm tại
+        <a href="https://www.facebook.com/takebin.07" target="_blank" rel="noopener noreferrer">GitHub</a>
+        hoặc
+        <a href="https://www.facebook.com/takebin.07" target="_blank" rel="noopener noreferrer">Facebook</a>.
+      </p>
+
+      <button id="btnChangeColor">Đổi màu nền</button>
+    </section>
+
+    <section id="thong-tin">
+      <h2>Thông tin cá nhân</h2>
+      <ul>
+        <li><strong>Họ và tên:</strong> Nguyễn Minh Đức</li>
+        <li><strong>MSV:</strong> B25DCTV083</li>
+        <li><strong>Ngày sinh:</strong> 06/01/2007</li>
+        <li><strong>Trường:</strong> Học viện Công nghệ Bưu chính Viễn thông</li>
+      </ul>
+    </section>
+
+    <section id="ky-nang">
+      <h2>Kỹ năng &amp; Quá trình học tập</h2>
+
+      <h3>Kỹ năng</h3>
+      <ul>
+        <li>HTML / CSS / JavaScript cơ bản</li>
+        <li>Sử dụng Git để quản lý mã nguồn</li>
+        <li>Làm việc nhóm, tự tìm hiểu tài liệu kỹ thuật</li>
+      </ul>
+
+      <h3>Quá trình học tập</h3>
+      <ol>
+        <li>2022 - 2025: Học sinh THPT</li>
+        <li>2025 - nay: Sinh viên Học viện Công nghệ Bưu chính Viễn thông</li>
+      </ol>
+
+    </section>
+
+    <aside>
+      <h3>Sở thích &amp; Khả năng</h3>
+      <p>Sở thích: lập trình web, chơi bóng đá, nghe nhạc và xem phim lúc rảnh rỗi.</p>
+      <p><small>Khả năng: tự học công nghệ mới, làm việc nhóm, sử dụng Git cơ bản.</small></p>
+    </aside>
+
+    <section id="lien-he">
+      <h2>Form liên hệ</h2>
+      <form action="#" method="post">
+        <label for="hoten">Họ và tên:</label>
+        <input type="text" id="hoten" name="hoten" placeholder="Nhập họ và tên" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+        <label for="chude">Chủ đề:</label>
+        <select id="chude" name="chude">
+          <option value="hoptac">Hợp tác</option>
+          <option value="tuvan">Tư vấn</option>
+          <option value="khac">Khác</option>
+        </select>
+
+        <label for="loinhan">Lời nhắn:</label>
+        <textarea id="loinhan" name="loinhan" rows="4" placeholder="Nhập nội dung tin nhắn..."></textarea>
+
+        <button type="submit">Gửi liên hệ</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nguyễn Minh Đức. All rights reserved.</p>
+  </footer>
+
+  <script>
+    var now = new Date();
+    var gioHienTai = now.getHours();
+    var loiChao;
+
+    if (gioHienTai >= 5 && gioHienTai < 12) {
+        loiChao = "Chào buổi sáng!";
+    } else if (gioHienTai >= 12 && gioHienTai < 18) {
+        loiChao = "Chào buổi chiều!";
+    } else {
+        loiChao = "Chào buổi tối!";
+    }
+
+    document.getElementById("welcome").innerText = loiChao;
+    var danhSachMau = ["#f5f5f5", "#f9e79f", "#a9dfbf", "#aed6f1", "#f5b7b1"];
+    var chiSoMau = 0;
+
+    var btn = document.getElementById("btnChangeColor");
+
+    btn.addEventListener("click", function () {
+        chiSoMau = (chiSoMau + 1) % danhSachMau.length;
+        document.body.style.backgroundColor = danhSachMau[chiSoMau];
+    });
+  </script>
+
+</body>
+</html>
